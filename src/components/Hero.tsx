@@ -54,52 +54,52 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
-      {/* Cyan/Teal Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-slate-950 to-cyan-950">
-        <div className="absolute inset-0 bg-gradient-to-tr from-cyan-950/30 via-transparent to-teal-950/20" />
+      {/* Deep Blue Base Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-gray-950 to-blue-950">
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-950/20 via-transparent to-slate-950/30" />
       </div>
 
       {/* Programming Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating Code Snippets */}
-        <div className="absolute top-20 left-10 text-cyan-400/40 font-mono text-sm animate-code-float">
+        <div className="absolute top-20 left-10 text-blue-400/40 font-mono text-sm animate-code-float">
           {"const developer = {"}
         </div>
-        <div className="absolute top-32 left-16 text-cyan-300/50 font-mono text-xs animate-code-float-delayed">
+        <div className="absolute top-32 left-16 text-blue-300/50 font-mono text-xs animate-code-float-delayed">
           {'  name: "Vadym Zharyi",'}
         </div>
-        <div className="absolute top-44 left-16 text-cyan-300/50 font-mono text-xs animate-code-float-delayed-2">
+        <div className="absolute top-44 left-16 text-blue-300/50 font-mono text-xs animate-code-float-delayed-2">
           {'  passion: "web development",'}
         </div>
-        <div className="absolute top-56 left-16 text-cyan-300/50 font-mono text-xs animate-code-float-delayed-3">
+        <div className="absolute top-56 left-16 text-blue-300/50 font-mono text-xs animate-code-float-delayed-3">
           {'  skills: ["React", "TypeScript"]'}
         </div>
-        <div className="absolute top-68 left-10 text-cyan-400/40 font-mono text-sm animate-code-float-delayed-4">
+        <div className="absolute top-68 left-10 text-blue-400/40 font-mono text-sm animate-code-float-delayed-4">
           {"};"}
         </div>
 
-        <div className="absolute bottom-52 right-20 text-teal-400/40 font-mono text-sm animate-code-float-reverse">
+        <div className="absolute bottom-52 right-20 text-indigo-400/40 font-mono text-sm animate-code-float-reverse">
           {"function buildAwesome() {"}
         </div>
-        <div className="absolute bottom-40 right-24 text-teal-300/50 font-mono text-xs animate-code-float-reverse-delayed">
+        <div className="absolute bottom-40 right-24 text-indigo-300/50 font-mono text-xs animate-code-float-reverse-delayed">
           {"  const result = passion + code;"}
         </div>
-        <div className="absolute bottom-28 right-24 text-teal-300/50 font-mono text-xs animate-code-float-reverse-delayed-2">
+        <div className="absolute bottom-28 right-24 text-indigo-300/50 font-mono text-xs animate-code-float-reverse-delayed-2">
           {"  return result.optimize();"}
         </div>
-        <div className="absolute bottom-16 right-20 text-teal-400/40 font-mono text-sm animate-code-float-reverse">
+        <div className="absolute bottom-16 right-20 text-indigo-400/40 font-mono text-sm animate-code-float-reverse">
           {"}"}
         </div>
 
         {/* Terminal Windows */}
-        <div className="overflow-hidden hidden lg:block absolute top-1/5 right-1/3 w-52 h-36 bg-gray-900/10 rounded-lg border border-cyan-500/10 backdrop-blur-sm animate-terminal-glow">
-          <div className="flex items-center gap-2 p-2 border-b border-cyan-500/10">
+        <div className="overflow-hidden hidden lg:block absolute top-1/5 right-1/3 w-52 h-36 bg-gray-900/10 rounded-lg border border-blue-500/10 backdrop-blur-sm animate-terminal-glow">
+          <div className="flex items-center gap-2 p-2 border-b border-blue-500/10">
             <div className="w-3 h-3 rounded-full bg-red-500/30"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500/30"></div>
             <div className="w-3 h-3 rounded-full bg-green-500/30"></div>
-            <span className="text-xs text-cyan-300/15 ml-2">terminal</span>
+            <span className="text-xs text-blue-300/15 ml-2">terminal</span>
           </div>
-          <div className="p-3 font-mono text-xs text-cyan-300/20 space-y-1">
+          <div className="p-3 font-mono text-xs text-blue-300/20 space-y-1">
             <div>$ npm run build</div>
             <div className="text-green-400/20">✓ Build completed</div>
             <div className="text-blue-400/15">📦 Bundle optimized</div>
@@ -107,12 +107,12 @@ const Hero = () => {
         </div>
 
         {/* Additional Code Window */}
-        <div className="overflow-hidden hidden lg:block absolute top-4/5 left-1/5 w-44 h-28 bg-gray-900/8 rounded-lg border border-teal-500/8 backdrop-blur-sm animate-terminal-glow" style={{animationDelay: '2s'}}>
-          <div className="flex items-center gap-2 p-2 border-b border-teal-500/8">
-            <div className="w-2 h-2 rounded-full bg-teal-500/20"></div>
-            <span className="text-xs text-teal-300/12">app.tsx</span>
+        <div className="overflow-hidden hidden lg:block absolute top-4/5 left-1/5 w-44 h-28 bg-gray-900/8 rounded-lg border border-indigo-500/8 backdrop-blur-sm animate-terminal-glow" style={{ animationDelay: '2s' }}>
+          <div className="flex items-center gap-2 p-2 border-b border-indigo-500/8">
+            <div className="w-2 h-2 rounded-full bg-indigo-500/20"></div>
+            <span className="text-xs text-indigo-300/12">app.tsx</span>
           </div>
-          <div className="p-2 font-mono text-xs text-teal-300/15">
+          <div className="p-2 font-mono text-xs text-indigo-300/15">
             <div>export default App;</div>
           </div>
         </div>
@@ -121,7 +121,7 @@ const Hero = () => {
         {[...Array(40)].map((_, i) => (
           <div
             key={`particle-${i}`}
-            className="absolute w-1 h-1 bg-cyan-400/40 rounded-full animate-float-particle"
+            className="absolute w-1 h-1 bg-blue-400/40 rounded-full animate-float-particle"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -132,12 +132,8 @@ const Hero = () => {
         ))}
 
         {/* Enhanced grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:50px_50px] animate-grid-drift" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px] animate-grid-drift" />
       </div>
-
-      {/* Warm Transition to About */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent via-amber-950/20 to-amber-950/40"></div>
-
       <div className="container mx-auto px-4 relative z-10 max-w-7xl">
         <div
           className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -146,19 +142,19 @@ const Hero = () => {
           <div className="flex flex-col items-center text-center lg:hidden space-y-8 px-4">
             {/* Profile Image - Mobile */}
             <div className="relative group">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-2 border-cyan-500/20 shadow-2xl flex items-center justify-center bg-white/5 backdrop-blur-sm group-hover:scale-105 transition-transform duration-500">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-2 border-blue-500/20 shadow-2xl flex items-center justify-center bg-white/5 backdrop-blur-sm group-hover:scale-105 transition-transform duration-500">
                 <img src="/vadym.png" alt="Vadym Zharyi - Full-Stack Developer" className="w-full h-full object-contain" />
               </div>
-              <div className="absolute inset-0 w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-cyan-400/20 animate-pulse-ring" />
+              <div className="absolute inset-0 w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-blue-400/20 animate-pulse-ring" />
             </div>
 
             {/* Content - Mobile */}
             <div className="space-y-6">
               <div>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent animate-text-shimmer">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-text-shimmer">
                   Vadym Zharyi
                 </h1>
-                <p className="text-xl sm:text-2xl text-cyan-300 mb-4 font-light">Full-Stack Developer</p>
+                <p className="text-xl sm:text-2xl text-blue-300 mb-4 font-light">Full-Stack Developer</p>
                 <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-md mx-auto">
                   Crafting modern web applications with passion for clean code and exceptional user experiences
                 </p>
@@ -169,19 +165,19 @@ const Hero = () => {
                 <Button
                   size="lg"
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="hover:scale-105 transition-all duration-300 bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 text-white shadow-lg shadow-cyan-600/25 hover:shadow-cyan-500/40 relative overflow-hidden group"
+                  className="hover:scale-105 transition-all duration-300 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-500/40 relative overflow-hidden group"
                 >
                   <span className="relative z-10">View My Work</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-teal-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="hover:scale-105 transition-all duration-300 border-white/20 text-white hover:bg-white/10 bg-transparent hover:border-cyan-400/50 relative overflow-hidden group"
+                  className="hover:scale-105 transition-all duration-300 border-white/20 text-white hover:bg-white/10 bg-transparent hover:border-blue-400/50 relative overflow-hidden group"
                 >
                   <span className="relative z-10">Get In Touch</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-teal-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Button>
               </div>
 
@@ -195,7 +191,7 @@ const Hero = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/25 group hover:-translate-y-1"
+                      className="w-12 h-12 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25 group hover:-translate-y-1"
                     >
                       {React.createElement(social.icon, {
                         className: "w-5 h-5 text-white/80 group-hover:text-white transition-colors duration-300"
@@ -212,12 +208,12 @@ const Hero = () => {
             {/* Left Content - Desktop */}
             <div className="space-y-8">
               <div>
-                <h1 className="text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-4 bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent animate-text-shimmer">
+                <h1 className="text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-4 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-text-shimmer">
                   Vadym Zharyi
                 </h1>
-                <p className="text-2xl xl:text-3xl text-cyan-300 mb-6 font-light">Full-Stack Developer</p>
+                <p className="text-2xl xl:text-3xl text-blue-300 mb-6 font-light">Aspiring Full-Stack Developer</p>
                 <p className="text-lg xl:text-xl text-white/70 leading-relaxed max-w-lg">
-                  Crafting modern web applications with passion for clean code and exceptional user experiences. 
+                  Crafting modern web applications with passion for clean code and exceptional user experiences.
                   Turning ideas into reality through innovative solutions.
                 </p>
               </div>
@@ -227,19 +223,19 @@ const Hero = () => {
                 <Button
                   size="lg"
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="hover:scale-105 transition-all duration-300 bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 text-white shadow-lg shadow-cyan-600/25 hover:shadow-cyan-500/40 relative overflow-hidden group"
+                  className="hover:scale-105 transition-all duration-300 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-500/40 relative overflow-hidden group"
                 >
                   <span className="relative z-10">View My Work</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-teal-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="hover:scale-105 transition-all duration-300 border-white/20 !text-white hover:bg-white/10 bg-transparent hover:border-cyan-400/50 relative overflow-hidden group"
+                  className="hover:scale-105 transition-all duration-300 border-white/20 !text-white hover:bg-white/10 bg-transparent hover:border-blue-400/50 relative overflow-hidden group"
                 >
                   <span className="relative z-10">Get In Touch</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-teal-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Button>
               </div>
 
@@ -253,7 +249,7 @@ const Hero = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/25 group hover:-translate-y-1"
+                      className="w-12 h-12 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25 group hover:-translate-y-1"
                     >
                       {React.createElement(social.icon, {
                         className: "w-5 h-5 text-white/80 group-hover:text-white transition-colors duration-300"
@@ -267,7 +263,7 @@ const Hero = () => {
             {/* Right Content - Profile Image Desktop */}
             <div className="flex justify-center xl:justify-end">
               <div className="relative group">
-                <div className="w-80 h-80 xl:w-96 xl:h-96 2xl:w-[420px] 2xl:h-[420px] rounded-full overflow-hidden border-2 border-cyan-500/20 shadow-2xl bg-white/5 backdrop-blur-sm group-hover:scale-105 transition-transform duration-500">
+                <div className="w-80 h-80 xl:w-96 xl:h-96 2xl:w-[420px] 2xl:h-[420px] rounded-full overflow-hidden border-2 border-blue-500/20 shadow-2xl bg-white/5 backdrop-blur-sm group-hover:scale-105 transition-transform duration-500">
                   <img
                     src="/vadym.png"
                     alt="Vadym Zharyi - Full-Stack Developer"
@@ -276,13 +272,13 @@ const Hero = () => {
                 </div>
 
                 {/* Enhanced animated rings */}
-                <div className="absolute inset-0 w-80 h-80 xl:w-96 xl:h-96 2xl:w-[420px] 2xl:h-[420px] rounded-full border border-cyan-400/20 animate-pulse-ring" />
-                <div className="absolute inset-0 w-80 h-80 xl:w-96 xl:h-96 2xl:w-[420px] 2xl:h-[420px] rounded-full border border-teal-400/10 animate-pulse-ring-delayed" />
+                <div className="absolute inset-0 w-80 h-80 xl:w-96 xl:h-96 2xl:w-[420px] 2xl:h-[420px] rounded-full border border-blue-400/20 animate-pulse-ring" />
+                <div className="absolute inset-0 w-80 h-80 xl:w-96 xl:h-96 2xl:w-[420px] 2xl:h-[420px] rounded-full border border-indigo-400/10 animate-pulse-ring-delayed" />
 
                 {/* Enhanced floating elements */}
-                <div className="absolute -top-4 -right-4 w-6 h-6 bg-cyan-400/60 rounded-full animate-bounce-slow delay-300" />
-                <div className="absolute -bottom-4 -left-4 w-4 h-4 bg-teal-300/60 rounded-full animate-bounce-slow delay-700" />
-                <div className="absolute top-1/4 -left-8 w-3 h-3 bg-cyan-500/60 rounded-full animate-pulse-glow delay-1000" />
+                <div className="absolute -top-4 -right-4 w-6 h-6 bg-blue-400/60 rounded-full animate-bounce-slow delay-300" />
+                <div className="absolute -bottom-4 -left-4 w-4 h-4 bg-indigo-300/60 rounded-full animate-bounce-slow delay-700" />
+                <div className="absolute top-1/4 -left-8 w-3 h-3 bg-blue-500/60 rounded-full animate-pulse-glow delay-1000" />
               </div>
             </div>
           </div>
@@ -344,10 +340,10 @@ const Hero = () => {
 
         @keyframes terminal-glow {
           0%, 100% {
-            box-shadow: 0 0 20px rgba(6, 182, 212, 0.1);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
           }
           50% {
-            box-shadow: 0 0 30px rgba(6, 182, 212, 0.2);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
           }
         }
 
@@ -394,11 +390,11 @@ const Hero = () => {
         @keyframes pulse-glow {
           0%, 100% {
             opacity: 0.4;
-            box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
           }
           50% {
             opacity: 0.8;
-            box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
           }
         }
 
