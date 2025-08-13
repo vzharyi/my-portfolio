@@ -120,7 +120,9 @@ const About = () => {
   const timeline = [
     {
       year: "2022",
+      month: "September",
       title: "University Enrollment",
+      mobileTitle: "University Enrollment",
       description:
         "Enrolled at the NTU 'KhPI', in Ukraine, where I study software engineering at the Faculty of Computer Science and Information Technology.",
       icon: GraduationCap,
@@ -128,14 +130,18 @@ const About = () => {
     },
     {
       year: "2022-2024",
-      title: "Studied programming languages",
+      month: "Sept-July",
+      title: "Programming Languages",
+      mobileTitle: "Programming Languages",
       description: "Got into C++, C, Java, JavaScript, and other languages and technologies, diving deep into coding.",
       icon: Brain,
       color: "from-amber-600 to-orange-600",
     },
     {
       year: "2024",
+      month: "November",
       title: "First Full-Stack Project",
+      mobileTitle: "First Full-Stack Project",
       description:
         "Built a full-stack web application using Node.js for the backend and JavaScript for the frontend. The application combines server-side functionality with a dynamic, client-side user interface.",
       icon: Code,
@@ -143,17 +149,21 @@ const About = () => {
     },
     {
       year: "2025",
+      month: "March",
       title: "Frontend Developer",
+      mobileTitle: "Frontend Developer",
       description:
-        "Worked as a frontend developer on the team, creating the full functionality of the frontend using React and TypeScript, and integrating it with the backend API. Contributed to one project leveraging the Next.js framework for enhanced performance and server-side rendering.",
+        "Worked as a frontend developer, creating full functionality with React and TypeScript, integrating it with a backend API, and contributing to a project using the Next.js framework.",
       icon: Sparkles,
       color: "from-green-600 to-yellow-600",
     },
     {
       year: "Now",
-      title: "Full-Stack Developer | Backend Focus",
+      month: "",
+      title: "Full-Stack | Backend Focus",
+      mobileTitle: "Full-Stack | Backend Focus",
       description:
-        "Continuing my journey as a full-stack developer, delving deeper into server-side architecture and backend technologies, mastering modern frameworks like NestJS and working with Prisma ORM to create efficient and scalable solutions.",
+        "Progressing toward full-stack developer, now focusing on backend — mastering server-side architecture, NestJS, and Prisma ORM to build scalable solutions.",
       icon: Rocket,
       color: "from-blue-600 to-green-600",
     },
@@ -204,18 +214,18 @@ const About = () => {
           </div>
 
           {/* Mobile Layout */}
-          <div className="block lg:hidden space-y-6 px-4 sm:px-8 md:px-20">
+          <div className="flex flex-col items-center lg:hidden space-y-8 px-4">
             {/* Story Card - Mobile */}
-            <div className="relative group">
+            <div className="relative group w-full max-w-xl">
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-              <div className="relative bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-white/10">
+              <div className="relative bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-white/10 overflow-hidden">
                 {/* Header - Mobile */}
                 <div className="flex flex-col space-y-4 mb-6">
                   <div className="flex justify-start">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-amber-600 to-orange-600 rounded-2xl flex items-center justify-center mr-4 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-amber-600 to-orange-600 rounded-2xl flex items-center justify-center mr-4 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 flex-shrink-0">
                       <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
-                    <div className="text-center sm:text-left">
+                    <div className="text-left min-w-0 flex-1">
                       <h3 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-white to-amber-400 bg-clip-text text-transparent">
                         My Story
                       </h3>
@@ -224,19 +234,19 @@ const About = () => {
                   </div>
 
                   {/* Stats - Mobile */}
-                  <div className="relative group/stats">
+                  <div className="relative group/stats w-full">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl blur opacity-30 group-hover/stats:opacity-50 transition duration-500"></div>
-                    <div className="relative bg-slate-800/90 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/20">
+                    <div className="relative bg-slate-800/90 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/20 overflow-hidden">
                       <div className="flex flex-col space-y-3">
-                        <div className="flex items-center space-x-2 sm:space-x-6">
+                        <div className="flex items-center justify-between sm:justify-start sm:space-x-6">
                           {stats.map((stat, index) => (
-                            <div key={index} className="flex items-center space-x-1 sm:space-x-2 group/stat">
+                            <div key={index} className="flex items-center space-x-1 sm:space-x-2 group/stat min-w-0">
                               <div
-                                className={`w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br ${stat.color} rounded-lg flex items-center justify-center shadow-lg group-hover/stat:scale-110 transition-transform duration-300`}
+                                className={`w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br ${stat.color} rounded-lg flex items-center justify-center shadow-lg group-hover/stat:scale-110 transition-transform duration-300 flex-shrink-0`}
                               >
                                 <stat.icon className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                               </div>
-                              <div>
+                              <div className="min-w-0">
                                 <span
                                   className={`text-xs sm:text-base font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mr-1`}
                                 >
@@ -253,7 +263,7 @@ const About = () => {
                 </div>
 
                 {/* Story Content - Mobile */}
-                <div className="space-y-4 sm:space-y-6 text-sm sm:text-base leading-relaxed sm:text-left">
+                <div className="space-y-4 sm:space-y-6 text-sm sm:text-base leading-relaxed text-left">
                   <p className="text-white/80 group-hover:text-white/90 transition-colors duration-300">
                     Hi! I'm{" "}
                     <span className="font-black text-lg sm:text-xl bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
@@ -279,15 +289,15 @@ const About = () => {
             </div>
 
             {/* Timeline - Mobile */}
-            <div className="relative group">
+            <div className="relative group w-full max-w-xl">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-              <div className="relative bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-white/10">
+              <div className="relative bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-white/10 overflow-hidden">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-pink-400 mr-3" />
+                  <div className="flex items-center min-w-0 flex-1">
+                    <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-pink-400 mr-3 flex-shrink-0" />
                     <h3 className="text-lg sm:text-xl font-bold text-white">Journey</h3>
                   </div>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-2 flex-shrink-0">
                     <div
                       className={`w-2 h-2 rounded-full ${isPaused ? "bg-orange-400" : "bg-pink-400 animate-pulse"}`}
                     ></div>
@@ -299,8 +309,9 @@ const About = () => {
                 <div className="mb-6">
                   <div className="w-full bg-white/10 rounded-full h-1 overflow-hidden">
                     <div
-                      className={`h-full bg-gradient-to-r rounded-full transition-all duration-100 ease-linear ${isPaused ? "from-orange-400 to-amber-400" : "from-pink-400 to-purple-400"
-                        }`}
+                      className={`h-full bg-gradient-to-r rounded-full transition-all duration-100 ease-linear ${
+                        isPaused ? "from-orange-400 to-amber-400" : "from-pink-400 to-purple-400"
+                      }`}
                       style={{
                         width: `${progress}%`,
                       }}
@@ -313,26 +324,27 @@ const About = () => {
 
                 {/* Current Timeline Item - Mobile */}
                 <div className="mb-6">
-                  <div className="flex space-x-4 sm:flex-row sm:items-start mb-4">
+                  <div className="flex space-x-4 items-start mb-4">
                     <div
-                      className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${TimelineColor} flex items-center justify-center shadow-lg mb-4 sm:mb-0 sm:mr-4 transition-all duration-500`}
+                      className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${TimelineColor} flex items-center justify-center shadow-lg transition-all duration-500 flex-shrink-0`}
                     >
                       <TimelineIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                     </div>
-                    <div className="sm:text-left">
+                    <div className="text-left min-w-0 flex-1">
                       <Badge
-                        className={`bg-gradient-to-r ${TimelineColor} text-white border-0 px-3 py-1 text-sm font-bold mb-2 transition-all duration-500`}
+                        className={`bg-gradient-to-r ${TimelineColor} text-white border-0 px-3 py-1 text-sm font-bold mb-1 transition-all duration-500`}
                       >
-                        {timeline[activeTimeline].year}
+                        {timeline[activeTimeline].month} {timeline[activeTimeline].year}
                       </Badge>
-                      <h3 className=" sm:text-2xl font-black bg-gradient-to-r from-white to-indigo-300 bg-clip-text text-transparent transition-all duration-300">
-                        {timeline[activeTimeline].title}
+                      <h3 className="text-2sm sm:text-2xl font-black bg-gradient-to-r from-white to-indigo-300 bg-clip-text text-transparent transition-all duration-300 leading-tight">
+                        <span className="sm:hidden">{timeline[activeTimeline].mobileTitle}</span>
+                        <span className="hidden sm:inline">{timeline[activeTimeline].title}</span>
                       </h3>
                     </div>
                   </div>
                   {/* Fixed height container for description to prevent layout jumps */}
-                  <div className="relative min-h-[120px] sm:min-h-[100px] overflow-hidden">
-                    <p className="absolute inset-0 text-white/80 text-sm sm:text-base leading-relaxed sm:text-left transition-all duration-500 opacity-100">
+                  <div className="relative min-h-[115px]  overflow-hidden flex items-center justify-center">
+                    <p className="text-white/80 text-sm sm:text-base leading-relaxed transition-all duration-500 opacity-100 w-full">
                       {timeline[activeTimeline].description}
                     </p>
                   </div>
@@ -343,32 +355,35 @@ const About = () => {
                   {timeline.map((item, index) => (
                     <div
                       key={index}
-                      className={`relative p-4 rounded-xl border transition-all duration-500 cursor-pointer group/item ${activeTimeline === index
+                      className={`relative p-4 rounded-xl border transition-all duration-500 cursor-pointer group/item overflow-hidden ${
+                        activeTimeline === index
                           ? "bg-white/10 border-white/20 scale-102 shadow-lg"
                           : "bg-white/5 border-white/10 hover:bg-white/8"
-                        }`}
+                      }`}
                       onClick={() => handleTimelineClick(index)}
                     >
                       <div className="flex items-center space-x-3">
                         <div
-                          className={`w-10 h-10 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg flex-shrink-0 ${activeTimeline === index ? "scale-110 shadow-xl" : "group-hover/item:scale-105"
-                            } transition-all duration-300`}
+                          className={`w-10 h-10 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg flex-shrink-0 ${
+                            activeTimeline === index ? "scale-110 shadow-xl" : "group-hover/item:scale-105"
+                          } transition-all duration-300`}
                         >
                           <item.icon className="w-5 h-5 text-white" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center space-x-2 mb-1">
+                          <div className="flex items-center space-x-2 mb-1 flex-wrap">
                             <Badge
-                              className={`bg-gradient-to-r ${item.color} text-white border-0 px-2 py-0.5 text-xs font-bold`}
+                              className={`bg-gradient-to-r ${item.color} text-white border-0 px-2 py-0.5 text-xs font-bold flex-shrink-0`}
                             >
-                              {item.year}
+                              {item.month} {item.year}
                             </Badge>
                             {activeTimeline === index && (
-                              <span className="text-xs text-pink-400 font-medium">● Active</span>
+                              <span className="text-xs text-pink-400 font-medium flex-shrink-0">● Active</span>
                             )}
                           </div>
-                          <h4 className="font-bold text-sm text-white group-hover/item:text-pink-300 transition-colors duration-300">
-                            {item.title}
+                          <h4 className="font-bold text-sm text-white group-hover/item:text-pink-300 transition-colors duration-300 break-words">
+                            <span className="sm:hidden">{item.mobileTitle}</span>
+                            <span className="hidden sm:inline">{item.title}</span>
                           </h4>
                         </div>
                       </div>
@@ -464,9 +479,9 @@ const About = () => {
                     </div>
                     <div>
                       <Badge
-                        className={`bg-gradient-to-r ${TimelineColor} text-white border-0 px-3 py-1 text-sm font-bold mb-2 transition-all duration-500`}
+                        className={`bg-gradient-to-r ${TimelineColor} text-white border-0 px-3 py-1 text-sm font-bold mb-0 transition-all duration-500`}
                       >
-                        {timeline[activeTimeline].year}
+                        {timeline[activeTimeline].month} {timeline[activeTimeline].year}
                       </Badge>
                       <h3 className="text-xl xl:text-2xl font-black bg-gradient-to-r from-white to-indigo-300 bg-clip-text text-transparent transition-all duration-300">
                         {timeline[activeTimeline].title}
@@ -504,8 +519,9 @@ const About = () => {
                   <div className="mb-4">
                     <div className="w-full bg-white/10 rounded-full h-1 overflow-hidden">
                       <div
-                        className={`h-full bg-gradient-to-r rounded-full transition-all duration-100 ease-linear ${isPaused ? "from-orange-400 to-amber-400" : "from-pink-400 to-purple-400"
-                          }`}
+                        className={`h-full bg-gradient-to-r rounded-full transition-all duration-100 ease-linear ${
+                          isPaused ? "from-orange-400 to-amber-400" : "from-pink-400 to-purple-400"
+                        }`}
                         style={{
                           width: `${progress}%`,
                         }}
@@ -520,16 +536,18 @@ const About = () => {
                     {timeline.map((item, index) => (
                       <div
                         key={index}
-                        className={`relative p-3 rounded-xl border transition-all duration-500 cursor-pointer group/item ${activeTimeline === index
+                        className={`relative p-3 rounded-xl border transition-all duration-500 cursor-pointer group/item ${
+                          activeTimeline === index
                             ? "bg-white/10 border-white/20 scale-105 shadow-lg"
                             : "bg-white/5 border-white/10 hover:bg-white/8 hover:scale-102"
-                          }`}
+                        }`}
                         onClick={() => handleTimelineClick(index)}
                       >
                         <div className="flex items-start space-x-3">
                           <div
-                            className={`w-7 h-7 xl:w-8 xl:h-8 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg flex-shrink-0 ${activeTimeline === index ? "scale-110 shadow-xl" : "group-hover/item:scale-105"
-                              } transition-all duration-300`}
+                            className={`w-7 h-7 xl:w-8 xl:h-8 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg flex-shrink-0 ${
+                              activeTimeline === index ? "scale-110 shadow-xl" : "group-hover/item:scale-105"
+                            } transition-all duration-300`}
                           >
                             <item.icon className="w-3 h-3 xl:w-4 xl:h-4 text-white" />
                           </div>
@@ -538,7 +556,7 @@ const About = () => {
                               <Badge
                                 className={`bg-gradient-to-r ${item.color} text-white border-0 px-2 py-0.5 text-xs font-bold`}
                               >
-                                {item.year}
+                                {item.month} {item.year}
                               </Badge>
                               {activeTimeline === index && (
                                 <span className="text-xs text-pink-400 font-medium">● Active</span>
