@@ -1,30 +1,59 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
+import { useEffect } from "react"
+
+import { useState } from "react"
+
+import { CardContent } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import {
-  Code,
-  Database,
-  Wrench,
+  Search,
+  Sparkles,
   Globe,
   Server,
-  Palette,
-  GitBranch,
-  Cloud,
-  TestTube,
-  Star,
-  TrendingUp,
-  Search,
-  Award,
-  Target,
-  Sparkles,
-  BarChart3,
   Settings,
   HardDrive,
+  Wrench,
+  Zap,
+  ImageIcon,
+  FileText,
+  Calendar,
 } from "lucide-react"
+
+// React Icons
+import {
+  SiReact,
+  SiTypescript,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiTailwindcss,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiMysql,
+  SiExpress,
+  SiGit,
+  SiVercel,
+  SiNestjs,
+  SiReactrouter,
+  SiShadcnui,
+  SiZod,
+  SiAxios,
+  SiPrisma,
+  SiJsonwebtokens,
+  SiSocketdotio,
+  SiEslint,
+  SiSwagger,
+  SiMui,
+  SiGoogle,
+  SiUnsplash,
+  SiKonva,
+  SiLucide,
+} from "react-icons/si"
+import { TbBrandVite } from "react-icons/tb"
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -47,246 +76,274 @@ const Skills = () => {
     return () => observer.disconnect()
   }, [])
 
+  const SKILL_TYPE_ORDER: Record<string, number> = {
+    "Full-Stack": 0,
+    Frontend: 1,
+    Backend: 2,
+    Database: 3,
+    API: 4,
+    DevOps: 5,
+    Tools: 6,
+  }
+
   const skillsData = [
     {
       name: "React",
-      icon: Code,
-      color: "text-blue-400",
-      bgColor: "from-blue-500/20 to-blue-600/20",
+      icon: SiReact,
+      color: "text-cyan-400",
       categories: ["Frontend"],
-      level: 5,
-      experience: "3 years",
-      featured: true,
+      type: "Frontend",
     },
     {
       name: "TypeScript",
-      icon: Code,
+      icon: SiTypescript,
       color: "text-blue-500",
-      bgColor: "from-blue-600/20 to-indigo-600/20",
       categories: ["Frontend", "Backend"],
-      level: 4,
-      experience: "2 years",
-      featured: true,
+      type: "Full-Stack",
     },
     {
       name: "Next.js",
-      icon: Globe,
+      icon: SiNextdotjs,
       color: "text-white",
-      bgColor: "from-gray-600/20 to-slate-600/20",
       categories: ["Frontend"],
-      level: 4,
-      experience: "2 years",
-      featured: true,
+      type: "Frontend",
     },
     {
       name: "Node.js",
-      icon: Server,
+      icon: SiNodedotjs,
       color: "text-green-500",
-      bgColor: "from-green-500/20 to-emerald-600/20",
       categories: ["Backend"],
-      level: 4,
-      experience: "2 years",
-      featured: true,
+      type: "Backend",
     },
     {
       name: "Tailwind CSS",
-      icon: Palette,
-      color: "text-blue-300",
-      bgColor: "from-cyan-500/20 to-blue-500/20",
+      icon: SiTailwindcss,
+      color: "text-cyan-400",
       categories: ["Frontend"],
-      level: 5,
-      experience: "2 years",
-    },
-    {
-      name: "Vue.js",
-      icon: Code,
-      color: "text-teal-400",
-      bgColor: "from-teal-500/20 to-green-500/20",
-      categories: ["Frontend"],
-      level: 3,
-      experience: "1 year",
+      type: "Frontend",
     },
     {
       name: "JavaScript",
-      icon: Code,
+      icon: SiJavascript,
       color: "text-yellow-400",
-      bgColor: "from-yellow-500/20 to-orange-500/20",
       categories: ["Frontend", "Backend"],
-      level: 5,
-      experience: "3 years",
+      type: "Full-Stack",
     },
     {
       name: "HTML5",
-      icon: Globe,
-      color: "text-orange-400",
-      bgColor: "from-orange-500/20 to-red-500/20",
+      icon: SiHtml5,
+      color: "text-orange-500",
       categories: ["Frontend"],
-      level: 5,
-      experience: "3 years",
+      type: "Frontend",
     },
     {
       name: "CSS3",
-      icon: Palette,
-      color: "text-blue-400",
-      bgColor: "from-blue-500/20 to-purple-500/20",
+      icon: SiCss3,
+      color: "text-blue-500",
       categories: ["Frontend"],
-      level: 5,
-      experience: "3 years",
-    },
-    {
-      name: "Python",
-      icon: Code,
-      color: "text-yellow-500",
-      bgColor: "from-yellow-600/20 to-blue-600/20",
-      categories: ["Backend"],
-      level: 3,
-      experience: "1 year",
-    },
-    {
-      name: "PostgreSQL",
-      icon: Database,
-      color: "text-blue-600",
-      bgColor: "from-blue-600/20 to-indigo-700/20",
-      categories: ["Database"],
-      level: 4,
-      experience: "2 years",
-    },
-    {
-      name: "MongoDB",
-      icon: Database,
-      color: "text-green-600",
-      bgColor: "from-green-600/20 to-teal-600/20",
-      categories: ["Database"],
-      level: 3,
-      experience: "1 year",
-    },
-    {
-      name: "GraphQL",
-      icon: Server,
-      color: "text-pink-400",
-      bgColor: "from-pink-500/20 to-purple-500/20",
-      categories: ["Backend"],
-      level: 3,
-      experience: "1 year",
-    },
-    {
-      name: "Express.js",
-      icon: Server,
-      color: "text-gray-400",
-      bgColor: "from-gray-500/20 to-slate-600/20",
-      categories: ["Backend"],
-      level: 4,
-      experience: "2 years",
-    },
-    {
-      name: "FastAPI",
-      icon: Server,
-      color: "text-teal-400",
-      bgColor: "from-teal-500/20 to-cyan-500/20",
-      categories: ["Backend"],
-      level: 2,
-      experience: "6 months",
-    },
-    {
-      name: "Redis",
-      icon: HardDrive,
-      color: "text-red-400",
-      bgColor: "from-red-500/20 to-orange-500/20",
-      categories: ["Database"],
-      level: 3,
-      experience: "1 year",
-    },
-    {
-      name: "Git",
-      icon: GitBranch,
-      color: "text-orange-500",
-      bgColor: "from-orange-500/20 to-red-500/20",
-      categories: ["Tools"],
-      level: 5,
-      experience: "3 years",
-    },
-    {
-      name: "Docker",
-      icon: Cloud,
-      color: "text-blue-500",
-      bgColor: "from-blue-500/20 to-cyan-500/20",
-      categories: ["DevOps"],
-      level: 3,
-      experience: "1 year",
-    },
-    {
-      name: "AWS",
-      icon: Cloud,
-      color: "text-orange-400",
-      bgColor: "from-orange-500/20 to-yellow-500/20",
-      categories: ["DevOps"],
-      level: 2,
-      experience: "6 months",
-    },
-    {
-      name: "Figma",
-      icon: Palette,
-      color: "text-purple-400",
-      bgColor: "from-purple-500/20 to-pink-500/20",
-      categories: ["Tools"],
-      level: 4,
-      experience: "2 years",
-    },
-    {
-      name: "Jest",
-      icon: TestTube,
-      color: "text-red-500",
-      bgColor: "from-red-500/20 to-pink-500/20",
-      categories: ["Tools"],
-      level: 3,
-      experience: "1 year",
-    },
-    {
-      name: "Webpack",
-      icon: Wrench,
-      color: "text-blue-600",
-      bgColor: "from-blue-600/20 to-indigo-600/20",
-      categories: ["Tools"],
-      level: 3,
-      experience: "1 year",
-    },
-    {
-      name: "Vite",
-      icon: Wrench,
-      color: "text-purple-500",
-      bgColor: "from-purple-500/20 to-violet-500/20",
-      categories: ["Tools"],
-      level: 4,
-      experience: "2 years",
-    },
-    {
-      name: "VS Code",
-      icon: Code,
-      color: "text-blue-500",
-      bgColor: "from-blue-500/20 to-indigo-500/20",
-      categories: ["Tools"],
-      level: 5,
-      experience: "3 years",
-    },
-    {
-      name: "Nginx",
-      icon: Server,
-      color: "text-green-400",
-      bgColor: "from-green-500/20 to-emerald-500/20",
-      categories: ["DevOps"],
-      level: 3,
-      experience: "1 year",
+      type: "Frontend",
     },
     {
       name: "MySQL",
-      icon: Database,
-      color: "text-blue-500",
-      bgColor: "from-blue-500/20 to-cyan-500/20",
+      icon: SiMysql,
+      color: "text-blue-600",
       categories: ["Database"],
-      level: 3,
-      experience: "1 year",
+      type: "Database",
     },
-  ]
+    {
+      name: "Express.js",
+      icon: SiExpress,
+      color: "text-gray-400",
+      categories: ["Backend"],
+      type: "Backend",
+    },
+    {
+      name: "Git",
+      icon: SiGit,
+      color: "text-orange-500",
+      categories: ["Tools"],
+      type: "Tools",
+    },
+    {
+      name: "Vercel",
+      icon: SiVercel,
+      color: "text-white",
+      categories: ["DevOps"],
+      type: "DevOps",
+    },
+    {
+      name: "Vite",
+      icon: TbBrandVite,
+      color: "text-purple-500",
+      categories: ["Tools"],
+      type: "Tools",
+    },
+    {
+      name: "NestJS",
+      icon: SiNestjs,
+      color: "text-red-500",
+      categories: ["Backend"],
+      type: "Backend",
+    },
+    {
+      name: "React Router",
+      icon: SiReactrouter,
+      color: "text-red-500",
+      categories: ["Frontend"],
+      type: "Frontend",
+    },
+    {
+      name: "Shadcn UI",
+      icon: SiShadcnui,
+      color: "text-white",
+      categories: ["Frontend"],
+      type: "Frontend",
+    },
+    {
+      name: "Zod",
+      icon: SiZod,
+      color: "text-blue-600",
+      categories: ["Full-Stack"],
+      type: "Full-Stack",
+    },
+    {
+      name: "Axios",
+      icon: SiAxios,
+      color: "text-purple-500",
+      categories: ["Full-Stack"],
+      type: "Full-Stack",
+    },
+    {
+      name: "Prisma",
+      icon: SiPrisma,
+      color: "text-indigo-500",
+      categories: ["Backend"],
+      type: "Backend",
+    },
+    {
+      name: "JWT",
+      icon: SiJsonwebtokens,
+      color: "text-pink-500",
+      categories: ["Backend"],
+      type: "Backend",
+    },
+    {
+      name: "Socket.io",
+      icon: SiSocketdotio,
+      color: "text-white",
+      categories: ["Backend"],
+      type: "Backend",
+    },
+    {
+      name: "ESLint",
+      icon: SiEslint,
+      color: "text-purple-600",
+      categories: ["Tools"],
+      type: "Tools",
+    },
+    {
+      name: "Swagger",
+      icon: SiSwagger,
+      color: "text-green-500",
+      categories: ["Tools"],
+      type: "Tools",
+    },
+    // {
+    //   name: "Zustand",
+    //   icon: SiZustand,
+    //   color: "text-orange-500",
+    //   categories: ["Frontend"],
+    //   type: "Frontend",
+    // },
+    {
+      name: "Material UI",
+      icon: SiMui,
+      color: "text-blue-500",
+      categories: ["Frontend"],
+      type: "Frontend",
+    },
+    {
+      name: "Google APIs",
+      icon: SiGoogle,
+      color: "text-red-500",
+      categories: ["API"],
+      type: "API",
+    },
+    {
+      name: "Unsplash",
+      icon: SiUnsplash,
+      color: "text-white",
+      categories: ["API"],
+      type: "API",
+    },
+    {
+      name: "Remove.bg",
+      icon: ImageIcon,
+      color: "text-green-400",
+      categories: ["API"],
+      type: "API",
+    },
+    {
+      name: "PixaBay",
+      icon: Globe,
+      color: "text-yellow-500",
+      categories: ["API"],
+      type: "API",
+    },
+    {
+      name: "Pollinations.ai",
+      icon: Zap,
+      color: "text-purple-400",
+      categories: ["API"],
+      type: "API",
+    },
+    {
+      name: "ImgBB",
+      icon: Globe,
+      color: "text-blue-400",
+      categories: ["API"],
+      type: "API",
+    },
+    {
+      name: "jsPDF",
+      icon: FileText,
+      color: "text-red-500",
+      categories: ["Tools"],
+      type: "Tools",
+    },
+    {
+      name: "FullCalendar",
+      icon: Calendar,
+      color: "text-orange-500",
+      categories: ["Frontend"],
+      type: "Frontend",
+    },
+    {
+      name: "Faker.js",
+      icon: Wrench,
+      color: "text-green-500",
+      categories: ["Tools"],
+      type: "Tools",
+    },
+    {
+      name: "KonvaJS",
+      icon: SiKonva,
+      color: "text-blue-500",
+      categories: ["Frontend"],
+      type: "Frontend",
+    },
+    {
+      name: "Lucide Icons",
+      icon: SiLucide,
+      color: "text-indigo-400",
+      categories: ["Frontend"],
+      type: "Frontend",
+    },
+  ].sort((a, b) => {
+    const orderA = SKILL_TYPE_ORDER[a.type]
+    const orderB = SKILL_TYPE_ORDER[b.type]
+    return orderA - orderB
+  })
 
   const categories = [
     {
@@ -294,36 +351,49 @@ const Skills = () => {
       count: skillsData.length,
       color: "from-blue-500 to-indigo-500",
       icon: Sparkles,
+      borderColorClass: "border-blue-400",
     },
     {
       name: "Frontend",
       count: skillsData.filter((s) => s.categories.includes("Frontend")).length,
-      color: "from-blue-500 to-blue-600",
+      color: "from-cyan-500 to-blue-600",
       icon: Globe,
+      borderColorClass: "border-cyan-400",
     },
     {
       name: "Backend",
       count: skillsData.filter((s) => s.categories.includes("Backend")).length,
       color: "from-green-500 to-emerald-600",
       icon: Server,
+      borderColorClass: "border-green-400",
     },
     {
       name: "Database",
       count: skillsData.filter((s) => s.categories.includes("Database")).length,
       color: "from-purple-500 to-violet-600",
       icon: HardDrive,
+      borderColorClass: "border-purple-400",
+    },
+    {
+      name: "API",
+      count: skillsData.filter((s) => s.categories.includes("API")).length,
+      color: "from-yellow-500 to-orange-500",
+      icon: Zap,
+      borderColorClass: "border-yellow-400",
     },
     {
       name: "DevOps",
       count: skillsData.filter((s) => s.categories.includes("DevOps")).length,
-      color: "from-orange-500 to-red-500",
+      color: "from-red-500 to-pink-500",
       icon: Settings,
+      borderColorClass: "border-red-400",
     },
     {
       name: "Tools",
       count: skillsData.filter((s) => s.categories.includes("Tools")).length,
       color: "from-gray-500 to-slate-600",
       icon: Wrench,
+      borderColorClass: "border-gray-400",
     },
   ]
 
@@ -333,23 +403,29 @@ const Skills = () => {
     return matchesCategory && matchesSearch
   })
 
-  const featuredSkills = skillsData.filter((skill) => skill.featured)
-
-  const renderStars = (level: number, size: "sm" | "md" = "md") => {
-    const starSize = size === "sm" ? "w-3 h-3" : "w-3.5 h-3.5"
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star key={i} className={`${starSize} ${i < level ? "text-yellow-400 fill-yellow-400" : "text-gray-600"}`} />
-    ))
+  const getTypeColor = (type: string) => {
+    switch (type) {
+      case "Frontend":
+        return "text-cyan-400 bg-cyan-500/20"
+      case "Backend":
+        return "text-green-400 bg-green-500/20"
+      case "Full-Stack":
+        return "text-purple-400 bg-purple-500/20"
+      case "Database":
+        return "text-indigo-400 bg-indigo-500/20"
+      case "API":
+        return "text-yellow-400 bg-yellow-500/20"
+      case "DevOps":
+        return "text-red-400 bg-red-500/20"
+      case "Tools":
+        return "text-gray-400 bg-gray-500/20"
+      default:
+        return "text-gray-400 bg-gray-500/20"
+    }
   }
 
-  const avgProficiency = Math.round(
-    (filteredSkills.reduce((acc, skill) => acc + skill.level, 0) / filteredSkills.length) * 20,
-  )
-  const expertSkills = filteredSkills.filter((skill) => skill.level === 5).length
-  const advancedSkills = filteredSkills.filter((skill) => skill.level >= 4).length
-
   return (
-    <section id="skills" className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
+    <section id="skills" className="py-12 md:py-16 lg:py-20 relative overflow-hidden scroll-mt-20">
       {/* Enhanced Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950">
         <div className="absolute inset-0 bg-gradient-to-tr from-indigo-950/20 via-transparent to-slate-800/10" />
@@ -359,7 +435,7 @@ const Skills = () => {
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {[Code, Database, Server, Wrench, Globe, Palette].map((Icon, i) => (
+        {[Globe, Server, HardDrive, Wrench, Settings, Zap].map((Icon, i) => (
           <div
             key={`bg-icon-${i}`}
             className="absolute text-white/5 animate-float-tech"
@@ -399,158 +475,12 @@ const Skills = () => {
               <span className="bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
                 Skills & Expertise
               </span>
-              <div className="absolute -bottom-1 md:-bottom-2 left-1/2 transform -translate-x-1/2 w-20 md:w-32 h-0.5 md:h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent rounded-full" />
+              <div className="absolute -bottom-2 md:-bottom-4 left-1/2 transform -translate-x-1/2 w-24 md:w-42 h-0.5 md:h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent rounded-full" />
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-6 md:mb-8 px-4">
-              Technologies I work with and my proficiency levels across different domains
-            </p>
-
-            {/* Enhanced Stats Dashboard */}
-            <div className="flex flex-col items-center lg:hidden px-4">
-              <div className="w-full max-w-xl">
-                <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-6 md:mb-8">
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 hover:bg-white/8 transition-all duration-300 group">
-                    <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-blue-400" />
-                      </div>
-                      <div>
-                        <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">
-                          {filteredSkills.length}
-                        </div>
-                        <div className="text-xs sm:text-sm text-white/60">Technologies</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 hover:bg-white/8 transition-all duration-300 group">
-                    <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-green-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <Award className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-green-400" />
-                      </div>
-                      <div>
-                        <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">{expertSkills}</div>
-                        <div className="text-xs sm:text-sm text-white/60">Expert Level</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 hover:bg-white/8 transition-all duration-300 group">
-                    <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-yellow-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-yellow-400" />
-                      </div>
-                      <div>
-                        <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">{avgProficiency}%</div>
-                        <div className="text-xs sm:text-sm text-white/60">Avg Proficiency</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 hover:bg-white/8 transition-all duration-300 group">
-                    <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <Target className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-purple-400" />
-                      </div>
-                      <div>
-                        <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">{advancedSkills}</div>
-                        <div className="text-xs sm:text-sm text-white/60">Advanced+</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Desktop Stats */}
-            <div className="hidden lg:flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-6 md:mb-8 px-4">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 hover:bg-white/8 transition-all duration-300 group">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-blue-400" />
-                  </div>
-                  <div>
-                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">{filteredSkills.length}</div>
-                    <div className="text-xs sm:text-sm text-white/60">Technologies</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 hover:bg-white/8 transition-all duration-300 group">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-green-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Award className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-green-400" />
-                  </div>
-                  <div>
-                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">{expertSkills}</div>
-                    <div className="text-xs sm:text-sm text-white/60">Expert Level</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 hover:bg-white/8 transition-all duration-300 group">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-yellow-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-yellow-400" />
-                  </div>
-                  <div>
-                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">{avgProficiency}%</div>
-                    <div className="text-xs sm:text-sm text-white/60">Avg Proficiency</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 hover:bg-white/8 transition-all duration-300 group">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Target className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-purple-400" />
-                  </div>
-                  <div>
-                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">{advancedSkills}</div>
-                    <div className="text-xs sm:text-sm text-white/60">Advanced+</div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Mobile Layout */}
           <div className="flex flex-col items-center lg:hidden space-y-8 px-4">
-            {/* Featured Skills Section - Mobile */}
-            <div className="w-full max-w-xl">
-              <div className="flex items-center gap-2 md:gap-3 mb-6 md:mb-8">
-                <div className="w-6 h-6 md:w-8 md:h-8 rounded-lg bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center">
-                  <Star className="w-3 h-3 md:w-4 md:h-4 text-white fill-white" />
-                </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white">Featured Skills</h3>
-                <div className="flex-1 h-px bg-gradient-to-r from-yellow-500/50 to-transparent"></div>
-              </div>
-
-              <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-3">
-                {featuredSkills.map((skill, index) => (
-                  <Card
-                    key={skill.name}
-                    className="h-16 group cursor-pointer border-0 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10 min-w-0"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <CardContent className="p-3 -mt-6">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                          <skill.icon className={`w-5 h-5 ${skill.color}`} />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-semibold text-white text-sm mb-2 group-hover:text-blue-300 transition-colors duration-300 truncate">
-                            {skill.name}
-                          </h4>
-                          <div className="flex space-x-0.5">{renderStars(skill.level, "sm")}</div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
             {/* Search and Filter Section - Mobile */}
             <div className="w-full max-w-xl">
               <div className="flex flex-col gap-4 items-center">
@@ -573,18 +503,15 @@ const Skills = () => {
                       variant={activeCategory === category.name ? "default" : "ghost"}
                       onClick={() => setActiveCategory(category.name)}
                       size="sm"
-                      className={`relative overflow-hidden transition-all duration-300 hover:scale-105 group text-xs ${
+                      className={`relative overflow-hidden transition-all duration-300 hover:scale-105 group text-xs border ${
                         activeCategory === category.name
-                          ? "bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-lg shadow-blue-500/25"
-                          : "hover:bg-white/10 text-white/80 border border-white/10"
+                          ? `bg-gradient-to-r ${category.color} text-white shadow-lg shadow-blue-500/25 ${category.borderColorClass}`
+                          : "hover:bg-white/10 text-white/80 border-white/10"
                       }`}
                     >
                       <div className="flex items-center gap-1.5">
                         <category.icon className="w-3 h-3" />
                         <span>{category.name}</span>
-                        <Badge variant="secondary" className="text-xs px-1.5 py-0.5 bg-white/20 text-white/80">
-                          {category.count}
-                        </Badge>
                       </div>
                     </Button>
                   ))}
@@ -594,23 +521,31 @@ const Skills = () => {
 
             {/* Skills Grid - Mobile */}
             <div className="w-full max-w-xl">
-              <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-3">
+              <div
+                className={`grid gap-3 ${
+                  searchTerm
+                    ? "grid-cols-[repeat(auto-fill,minmax(140px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(160px,1fr))]"
+                    : "grid-cols-[repeat(auto-fit,minmax(140px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(160px,1fr))]"
+                }`}
+              >
                 {filteredSkills.map((skill, index) => (
                   <Card
                     key={skill.name}
-                    className="h-15 group cursor-pointer border-0 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10 min-w-0"
+                    className="h-16 group cursor-pointer border-0 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10 min-w-0"
                     style={{ animationDelay: `${index * 30}ms` }}
                   >
-                    <CardContent className="p-3 -mt-6.5">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                          <skill.icon className={`w-4 h-4 ${skill.color}`} />
+                    <CardContent className="p-2.5 h-full w-full flex items-center justify-start">
+                      <div className="flex items-center gap-2.5 w-full justify-start">
+                        <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                          <skill.icon className={`w-3.5 h-3.5 ${skill.color}`} />
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-semibold text-white text-sm mb-2 group-hover:text-blue-300 transition-colors duration-300 leading-tight truncate">
+                        <div className="flex-1 flex flex-col justify-center">
+                          <h4 className="font-semibold text-white text-xs mb-1 group-hover:text-blue-300 transition-colors duration-300 leading-tight truncate">
                             {skill.name}
                           </h4>
-                          <div className="flex space-x-0.5">{renderStars(skill.level, "sm")}</div>
+                          <Badge className={`text-xs px-1.5 py-0.5 ${getTypeColor(skill.type)} border-0 w-fit`}>
+                            {skill.type}
+                          </Badge>
                         </div>
                       </div>
                     </CardContent>
@@ -622,43 +557,8 @@ const Skills = () => {
 
           {/* Desktop Layout */}
           <div className="hidden lg:block px-8 xl:px-12">
-            {/* Featured Skills Section - Desktop */}
-            <div className="mb-8 md:mb-12 lg:mb-16">
-              <div className="flex items-center gap-2 md:gap-3 mb-6 md:mb-8">
-                <div className="w-6 h-6 md:w-8 md:h-8 rounded-lg bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center">
-                  <Star className="w-3 h-3 md:w-4 md:h-4 text-white fill-white" />
-                </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white">Featured Skills</h3>
-                <div className="flex-1 h-px bg-gradient-to-r from-yellow-500/50 to-transparent"></div>
-              </div>
-
-              <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
-                {featuredSkills.map((skill, index) => (
-                  <Card
-                    key={skill.name}
-                    className="h-19 group cursor-pointer border-0 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <CardContent className="p-4 -mt-6.5">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                          <skill.icon className={`w-6 h-6 ${skill.color}`} />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-semibold text-white text-sm mb-2 group-hover:text-blue-300 transition-colors duration-300">
-                            {skill.name}
-                          </h4>
-                          <div className="flex space-x-0.5">{renderStars(skill.level)}</div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
             {/* Search and Filter Section - Desktop */}
-            <div className="mb-8 md:mb-12">
+            <div className="mb-8">
               <div className="flex flex-col lg:flex-row gap-6 items-center">
                 {/* Search */}
                 <div className="relative flex-1 max-w-md">
@@ -678,18 +578,15 @@ const Skills = () => {
                       key={category.name}
                       variant={activeCategory === category.name ? "default" : "ghost"}
                       onClick={() => setActiveCategory(category.name)}
-                      className={`relative overflow-hidden transition-all duration-300 hover:scale-105 group ${
+                      className={`relative overflow-hidden transition-all duration-300 hover:scale-105 group border ${
                         activeCategory === category.name
-                          ? "bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-lg shadow-blue-500/25"
-                          : "hover:bg-white/10 text-white/80 border border-white/10"
+                          ? `bg-gradient-to-r ${category.color} text-white shadow-lg shadow-blue-500/25 ${category.borderColorClass}`
+                          : "hover:bg-white/10 text-white/80 border-white/10"
                       }`}
                     >
                       <div className="flex items-center gap-2">
                         <category.icon className="w-4 h-4" />
                         <span>{category.name}</span>
-                        <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-white/20 text-white/80">
-                          {category.count}
-                        </Badge>
                       </div>
                     </Button>
                   ))}
@@ -698,23 +595,31 @@ const Skills = () => {
             </div>
 
             {/* Skills Grid - Desktop */}
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4">
+            <div
+              className={`grid gap-4 ${
+                searchTerm
+                  ? "grid-cols-[repeat(auto-fill,minmax(180px,1fr))]"
+                  : "grid-cols-[repeat(auto-fit,minmax(180px,1fr))]"
+              }`}
+            >
               {filteredSkills.map((skill, index) => (
                 <Card
                   key={skill.name}
-                  className="h-19 group cursor-pointer border-0 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10"
+                  className="h-16 group cursor-pointer border-0 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10"
                   style={{ animationDelay: `${index * 30}ms` }}
                 >
-                  <CardContent className="p-4 -mt-6.5">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <skill.icon className={`w-5 h-5 ${skill.color}`} />
+                  <CardContent className="p-3 h-full w-full flex items-center justify-start">
+                    <div className="flex items-center gap-3 w-full justify-start">
+                      <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <skill.icon className={`w-4 h-4 ${skill.color}`} />
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-semibold text-white text-sm mb-2 group-hover:text-blue-300 transition-colors duration-300 leading-tight">
+                      <div className="flex-1 flex flex-col justify-center">
+                        <h4 className="font-semibold text-white text-sm mb-1 group-hover:text-blue-300 transition-colors duration-300 leading-tight">
                           {skill.name}
                         </h4>
-                        <div className="flex space-x-0.5">{renderStars(skill.level)}</div>
+                        <Badge className={`text-xs px-1.5 py-0.5 ${getTypeColor(skill.type)} border-0 w-fit`}>
+                          {skill.type}
+                        </Badge>
                       </div>
                     </div>
                   </CardContent>
