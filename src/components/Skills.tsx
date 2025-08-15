@@ -425,7 +425,7 @@ const Skills = () => {
   }
 
   return (
-    <section id="skills" className="py-12 md:py-16 lg:py-20 relative overflow-hidden scroll-mt-20">
+    <section id="skills" className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
       {/* Enhanced Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950">
         <div className="absolute inset-0 bg-gradient-to-tr from-indigo-950/20 via-transparent to-slate-800/10" />
