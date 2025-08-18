@@ -473,7 +473,7 @@ const Skills = () => {
           <div className="text-center mb-8 md:mb-12 lg:mb-16 relative">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 md:mb-6 relative">
               <span className="bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
-                Skills & Expertise
+                Skills & Technologies
               </span>
               <div className="absolute -bottom-2 md:-bottom-4 left-1/2 transform -translate-x-1/2 w-24 md:w-42 h-0.5 md:h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent rounded-full" />
             </h2>
