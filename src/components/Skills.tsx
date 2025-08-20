@@ -52,6 +52,9 @@ import {
   SiUnsplash,
   SiKonva,
   SiLucide,
+  SiKoyeb,
+  SiRender,
+  SiRailway,
 } from "react-icons/si"
 import { TbBrandVite } from "react-icons/tb"
 
@@ -203,14 +206,14 @@ const Skills = () => {
       name: "Zod",
       icon: SiZod,
       color: "text-blue-600",
-      categories: ["Full-Stack"],
+      categories: ["Frontend", "Backend"],
       type: "Full-Stack",
     },
     {
       name: "Axios",
       icon: SiAxios,
       color: "text-purple-500",
-      categories: ["Full-Stack"],
+      categories: ["Frontend", "Backend"],
       type: "Full-Stack",
     },
     {
@@ -338,6 +341,27 @@ const Skills = () => {
       color: "text-indigo-400",
       categories: ["Frontend"],
       type: "Frontend",
+    },
+    {
+      name: "Koyeb",
+      icon: SiKoyeb,
+      color: "text-green-400",
+      categories: ["DevOps"],
+      type: "DevOps",
+    },
+    {
+      name: "Render",
+      icon: SiRender,
+      color: "text-blue-400",
+      categories: ["DevOps"],
+      type: "DevOps",
+    },
+    {
+      name: "Railway",
+      icon: SiRailway,
+      color: "text-blue-400",
+      categories: ["DevOps"],
+      type: "DevOps",
     },
   ].sort((a, b) => {
     const orderA = SKILL_TYPE_ORDER[a.type]
@@ -491,8 +515,18 @@ const Skills = () => {
                     placeholder="Search technologies..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-9 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-blue-400/50 focus:bg-white/10 text-sm h-10"
+                    className="pl-9 pr-9 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-blue-400/50 focus:bg-white/10 text-sm h-10"
                   />
+                  {searchTerm && (
+                    <button
+                      onClick={() => setSearchTerm("")}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 w-3 h-3 text-white/60 hover:text-white transition-colors duration-200"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                      </svg>
+                    </button>
+                  )}
                 </div>
 
                 {/* Category Filters */}
@@ -503,11 +537,10 @@ const Skills = () => {
                       variant={activeCategory === category.name ? "default" : "ghost"}
                       onClick={() => setActiveCategory(category.name)}
                       size="sm"
-                      className={`relative overflow-hidden transition-all duration-300 hover:scale-105 group text-xs border ${
-                        activeCategory === category.name
+                      className={`relative overflow-hidden transition-all duration-300 hover:scale-105 group text-xs border ${activeCategory === category.name
                           ? `bg-gradient-to-r ${category.color} text-white shadow-lg shadow-blue-500/25 ${category.borderColorClass}`
                           : "hover:bg-white/10 text-white/80 border-white/10"
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center gap-1.5">
                         <category.icon className="w-3 h-3" />
@@ -522,11 +555,10 @@ const Skills = () => {
             {/* Skills Grid - Mobile */}
             <div className="w-full max-w-xl">
               <div
-                className={`grid gap-3 ${
-                  searchTerm
+                className={`grid gap-3 ${searchTerm
                     ? "grid-cols-[repeat(auto-fill,minmax(140px,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(160px,1fr))]"
                     : "grid-cols-[repeat(auto-fit,minmax(140px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(160px,1fr))]"
-                }`}
+                  }`}
               >
                 {filteredSkills.map((skill, index) => (
                   <Card
@@ -567,8 +599,18 @@ const Skills = () => {
                     placeholder="Search technologies..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-blue-400/50 focus:bg-white/10"
+                    className="pl-10 pr-10 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-blue-400/50 focus:bg-white/10"
                   />
+                  {searchTerm && (
+                    <button
+                      onClick={() => setSearchTerm("")}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/60 hover:text-white transition-colors duration-200"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                      </svg>
+                    </button>
+                  )}
                 </div>
 
                 {/* Category Filters */}
@@ -578,11 +620,10 @@ const Skills = () => {
                       key={category.name}
                       variant={activeCategory === category.name ? "default" : "ghost"}
                       onClick={() => setActiveCategory(category.name)}
-                      className={`relative overflow-hidden transition-all duration-300 hover:scale-105 group border ${
-                        activeCategory === category.name
+                      className={`relative overflow-hidden transition-all duration-300 hover:scale-105 group border ${activeCategory === category.name
                           ? `bg-gradient-to-r ${category.color} text-white shadow-lg shadow-blue-500/25 ${category.borderColorClass}`
                           : "hover:bg-white/10 text-white/80 border-white/10"
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center gap-2">
                         <category.icon className="w-4 h-4" />
@@ -596,11 +637,10 @@ const Skills = () => {
 
             {/* Skills Grid - Desktop */}
             <div
-              className={`grid gap-4 ${
-                searchTerm
+              className={`grid gap-4 ${searchTerm
                   ? "grid-cols-[repeat(auto-fill,minmax(180px,1fr))]"
                   : "grid-cols-[repeat(auto-fit,minmax(180px,1fr))]"
-              }`}
+                }`}
             >
               {filteredSkills.map((skill, index) => (
                 <Card
