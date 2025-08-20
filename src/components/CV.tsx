@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, FileText } from "lucide-react"
 
@@ -5,6 +6,11 @@ const CV = () => {
   const handleBackToPortfolio = () => {
     window.location.href = '/'
   }
+
+  // Автоматически скроллим вверх при загрузке страницы
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white flex items-center justify-center">

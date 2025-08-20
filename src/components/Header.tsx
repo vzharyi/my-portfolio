@@ -100,7 +100,7 @@ const Header = () => {
                 {/* Resume Button */}
                 <Button
                   onClick={handleResumeClick}
-                  className="ml-6 px-6 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20 text-white transition-all duration-300 hover:scale-105 transform shadow-lg"
+                  className="ml-6 px-6 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20 text-white hover:bg-gradient-to-r hover:from-cyan-500/20 hover:to-purple-500/20 hover:border-cyan-400/30 transition-all duration-300 hover:scale-105 transform shadow-lg"
                 >
                   <FileText className="w-4 h-4 mr-2" />
                   Resume
@@ -109,7 +109,7 @@ const Header = () => {
             ) : (
               <Button
                 onClick={() => navigate('/')}
-                className="ml-6 px-6 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20 text-white transition-all duration-300 hover:scale-105 transform shadow-lg"
+                className="ml-6 px-6 py-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20 text-white hover:bg-gradient-to-r hover:from-cyan-500/20 hover:to-purple-500/20 hover:border-cyan-400/30 transition-all duration-300 hover:scale-105 transform shadow-lg"
               >
                 Portfolio
               </Button>
@@ -151,7 +151,7 @@ const Header = () => {
               ) : (
                 <Button
                   onClick={() => navigate('/')}
-                  className="mx-4 py-3 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20 text-white hover:from-cyan-500/20 hover:to-purple-500/20 hover:border-cyan-400/30 transition-all duration-300 shadow-lg hover:shadow-cyan-500/10"
+                  className="mx-4 py-3 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20 text-white hover:bg-gradient-to-r hover:from-cyan-500/20 hover:to-purple-500/20 hover:border-cyan-400/30 transition-all duration-300 shadow-lg"
                 >
                   Back to Portfolio
                 </Button>
